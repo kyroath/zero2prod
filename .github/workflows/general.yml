@@ -69,3 +69,9 @@ jobs:
         uses: actions-rs/tarpaulin@v0.1
         with:
           args: "--ignore-tests"
+
+      - name: Upload to codecov.io
+        uses: codecov/codecov-action@v1
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          fail_ci_if_error: true
